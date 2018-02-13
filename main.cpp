@@ -21,7 +21,7 @@ void setNewPrime(const vector<int>& list, int& currentPrime, bool& doneSearching
 	doneSearching = true;
 }
 
-void setPrimesToZero(vector<int>& ourList, int currentPrime) {
+void setMultsToZero(vector<int>& ourList, int currentPrime) {
 	for (size_t i = 0; i < ourList.size(); ++i) {
 		if (ourList[i] != currentPrime && ourList[i] % currentPrime == 0) {
 			ourList[i] = 0;
@@ -46,7 +46,7 @@ void findPrimes() { // the real "main" function
 
 	//Main search loop
 	while (!doneSearching) {
-		setPrimesToZero(ourList, currentPrime);
+		setMultsToZero(ourList, currentPrime);
 		setNewPrime(ourList, currentPrime, doneSearching);
 	}
 
